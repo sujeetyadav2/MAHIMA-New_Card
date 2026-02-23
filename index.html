@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>महिमा संग रोहित - शाही आमंत्रण 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Playfair+Display:wght@900&family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
-        :root { --maroon: #4a0000; --gold: #D4AF37; --cream: #FDFBF8; --indigo: #0a0e27; }
+        :root { --indigo: #0a0e27; --gold: #D4AF37; --cream: #FDFBF8; --maroon: #5a0000; --glass: rgba(255, 255, 255, 0.6); }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body, html { height: 100%; background: #000; font-family: 'Hind', sans-serif; overflow-x: hidden; }
 
-        /* 1. मोबाइल सेंटर्ड ओपनिंग पेज (Splash Screen) */
+        /* 1. मोबाइल सेंटर्ड ओपनिंग पेज */
         #splash-page {
-            position: fixed; width: 100%; height: 100%; background: var(--indigo);
+            position: fixed; width: 100%; height: 100%; background: var(--maroon);
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             z-index: 2000; transition: 0.8s ease-in-out; cursor: pointer; border: 15px double var(--gold);
             text-align: center; left: 0; top: 0;
@@ -28,76 +28,74 @@
             width: 100%; max-width: 650px; background: var(--cream); 
             border: 4px solid var(--gold); outline: 15px double var(--gold); outline-offset: -10px;
             padding: 45px 20px; text-align: center; position: relative;
-            box-shadow: 0 0 100px rgba(212, 175, 55, 0.6); margin: 15px 0;
+            box-shadow: 0 0 100px rgba(212, 175, 55, 0.7); margin: 15px 0;
         }
 
-        /* 3. सघन बबल वर्षा (Falling Down Effect) */
+        /* 3. सघन बबल वर्षा (Top to Bottom Rain - 100% Fixed) */
         #bubble-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
-   .bubble { position: absolute; background: rgba(255, 255, 255, 0.25); border: 1px solid rgba(255,255,255,0.4); border-radius: 50%; animation: bubbleRain linear infinite; }
-        @keyframes bubbleRain { 0% { transform: translateY(-15vh) scale(0.5); opacity: 0; } 20% { opacity: 0.6; } 100% { transform: translateY(115vh) scale(1.2); opacity: 0; } }
+   .bubble { position: absolute; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255,255,255,0.4); border-radius: 50%; animation: bubbleRain linear infinite; }
+        @keyframes bubbleRain { 0% { transform: translateY(-15vh) scale(0.4); opacity: 0; } 20% { opacity: 0.7; } 100% { transform: translateY(115vh) scale(1.3); opacity: 0; } }
 
-        /* 4. सेगमेंटेड फ्रेम्स (Unique Arch Style) */
-   .arch-frame { 
-            border: 2px solid var(--gold); padding: 30px 15px; margin: 35px 0; border-radius: 20px;
-            background: #fffdf9; position: relative; box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1);
+        /* 4. सेगमेंटेड झरोखा फ्रेम्स */
+   .jharokha-frame { 
+            border: 2px solid var(--gold); padding: 30px 15px; margin: 35px 0; border-radius: 25px;
+            background: #fffdfa; position: relative; box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.15);
         }
 
         /* 5. सर्कल फोटो और गोल्ड पिता पट्टिका */
    .couple-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
    .circle-frame { 
-            width: 185px; height: 185px; border: 6px solid var(--gold); padding: 5px;
-            border-radius: 50%; overflow: hidden; background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 190px; height: 190px; border: 6px solid var(--gold); padding: 5px;
+            border-radius: 50%; overflow: hidden; background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
    .circle-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-   .father-tag { 
-            margin-top: 15px; background: var(--maroon); color: var(--gold); padding: 6px 18px; 
-            border-radius: 25px; font-weight: 900; font-size: 0.95rem; border: 1.5px solid var(--gold);
+   .parent-tag { 
+            margin-top: 15px; background: var(--maroon); color: var(--gold); padding: 8px 18px; 
+            border-radius: 30px; font-weight: 900; font-size: 0.95rem; border: 1.5px solid var(--gold);
         }
 
-        /* 6. बोल्ड नाम स्टाइल */
-   .bold-names { 
+        /* 6. बोल्ड शाही नाम स्टाइल */
+   .bold-names-royal { 
             font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: var(--maroon); margin: 15px 0;
             text-transform: uppercase; letter-spacing: 2px;
-            border-bottom: 3px double var(--gold); display: inline-block; padding-bottom: 5px;
+            border-bottom: 4px double var(--gold); display: inline-block; padding-bottom: 5px;
         }
 
-        /* 7. ग्लास सुविचार */
-   .glass-quote {
-            background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(212, 175, 55, 0.5); margin: 40px auto; padding: 25px; 
-            border-radius: 20px; color: #111; font-weight: bold; font-style: italic; 
-            line-height: 1.8; max-width: 95%; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        /* 7. हाईलाइटेड इवेंट बॉक्स (Fixed Background Issue) */
+   .highlight-event-box { 
+            background: var(--maroon); color: white; padding: 30px 20px; border-radius: 20px; 
+            border: 4px solid var(--gold); margin: 40px 0; position: relative; z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-
-   .highlight-card { background: var(--maroon); color: white; padding: 25px; border-radius: 15px; border: 3px solid var(--gold); margin: 30px 0; }
+   .highlight-title { font-size: 2rem; font-weight: 900; color: var(--gold); text-decoration: underline; margin-bottom: 10px; }
 
         /* 8. मैन्युअल परिवार स्क्रॉल */
-   .manual-scroll {
-            height: 300px; overflow-y: auto; border: 1.5px solid var(--gold);
-            background: white; padding: 20px; margin: 25px 0; text-align: left;
-            font-size: 1rem; line-height: 1.9; color: #333; border-radius: 10px;
+   .manual-scroll-area {
+            height: 320px; overflow-y: auto; border: 1.5px solid var(--gold);
+            background: white; padding: 25px 15px; margin: 25px 0; text-align: left;
+            font-size: 1rem; line-height: 2; color: #333; border-radius: 12px;
         }
-   .manual-scroll strong { color: var(--maroon); font-size: 1.2rem; display: block; border-bottom: 2.5px solid #eee; margin-top: 15px; }
+   .manual-scroll-area strong { color: var(--maroon); font-size: 1.2rem; display: block; border-bottom: 2px solid #eee; margin-top: 15px; }
 
         /* 9. बिजनेस क्रेडिट और RSVP */
-   .dev-footer { margin-top: 50px; padding: 30px 10px; border-top: 2px dashed var(--gold); text-align: center; }
-   .whatsapp-btn { background: #25D366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: 900; display: inline-flex; align-items: center; gap: 10px; border: 2px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+   .biz-footer { margin-top: 60px; padding: 35px 10px; border-top: 2px dashed var(--gold); background: #fdfdfd; }
+   .whatsapp-biz-btn { background: #25D366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: 900; display: inline-flex; align-items: center; gap: 10px; border: 2px solid white; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
     <div id="splash-page" onclick="this.style.transform='translateY(-100%)'">
         <div style="font-size: 6rem; color: var(--gold); animation: pulse 2s infinite;">📜</div>
-        <h1 style="color: var(--gold); font-family: 'Playfair Display'; font-size: 3.2rem; margin-top: 20px;">मांगलिक निमंत्रण</h1>
-        <p style="color: white; margin-top: 10px; font-size: 1.4rem;">महिमा संग रोहित</p>
-        <div style="margin-top: 50px; border: 2.5px solid var(--gold); padding: 15px 45px; color: var(--gold); border-radius: 45px; font-weight: 900; font-size: 1.1rem;">आमंत्रण खोलें</div>
+        <h1 style="color: var(--gold); font-family: 'Playfair Display'; font-size: 3.5rem; margin-top: 20px;">मांगलिक निमंत्रण</h1>
+        <p style="color: white; margin-top: 10px; font-size: 1.5rem;">महिमा संग रोहित</p>
+        <div style="margin-top: 50px; border: 2.5px solid var(--gold); padding: 15px 45px; color: var(--gold); border-radius: 45px; font-weight: 900;">अंदर प्रवेश करें</div>
     </div>
 
     <div class="card-wrapper">
         <div class="main-card">
             <div id="bubble-container"></div>
             
-            <div style="font-weight:bold; color:var(--maroon); font-size: 1rem; line-height: 1.6;">
+            <div style="font-weight:bold; color:var(--maroon); font-size: 1rem; line-height: 1.6; padding: 0 10px;">
                 ॥ श्री गणेशाय नमः ॥ <br> 
                 वक्रतुण्ड महाकाय, सूर्यकोटि समप्रभः। <br> 
                 निर्विघ्नं कुरुमे देव, सर्वकार्येषु सर्वदा।।
@@ -105,52 +103,54 @@
             
             <div style="color:var(--gold); font-weight:900; margin-top:35px; font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase;">सेन परिवार का भव्य राजसी अभिनंदन</div>
             
-            <div class="bold-names">Mahima & Rohit</div>
+            <div class="bold-names-royal">Mahima & Rohit</div>
 
-            <div class="arch-frame">
+            <div class="jharokha-frame">
                 <div class="couple-grid">
                     <div style="display:flex; flex-direction:column; align-items:center;">
                         <div class="circle-frame"><img src="images/bride.jpg" alt="महिमा" onerror="this.src='https://via.placeholder.com/190?text=Bride'"></div>
-                        <div class="father-tag">सुपुत्री: श्रीमती ममता - श्री जितेन्द्र सेन</div>
+                        <div class="parent-tag">सुपुत्री: श्रीमती ममता - श्री जितेन्द्र सेन</div>
                     </div>
                     <div style="display:flex; flex-direction:column; align-items:center;">
                         <div class="circle-frame"><img src="images/groom.jpg" alt="रोहित" onerror="this.src='https://via.placeholder.com/190?text=Groom'"></div>
-                        <div class="father-tag">सुपुत्र: श्रीमती प्रभा - श्री जुगल किशोर सेन</div>
+                        <div class="parent-tag">सुपुत्र: श्रीमती प्रभा - श्री जुगल किशोर सेन</div>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-quote">
+            <div style="background: rgba(255, 255, 255, 0.6); padding: 25px; border-radius: 20px; border: 1px solid var(--gold); font-style: italic; font-weight: bold; line-height: 1.8; color: #111; margin: 30px auto; max-width: 95%;">
                 "विवाह... मिलन है दो परिवारों का, वादा है... साथ निभाने का,<br>
                 समय है... सपने सजाने का लम्हा है... खुशियाँ मनाने का।"
             </div>
 
-            <div class="arch-frame">
-                <div style="color: var(--indigo); font-size: 1.8rem; font-weight: 900; text-decoration: underline;">मांगलिक कार्यक्रम</div>
-                <div style="margin-top:20px;">
-                    <p style="font-size: 1.6rem; font-weight: 900; color: var(--maroon);">मण्डपाच्छादन / मातृकापूजन</p>
-                    <p style="font-weight:bold;">12 मार्च 2026, गुरुवार</p>
+            <div class="jharokha-frame">
+                <div style="color: var(--maroon); font-size: 1.8rem; font-weight: 900; text-decoration: underline;">मांगलिक कार्यक्रम</div>
+                <div style="margin-top:25px;">
+                    <p style="font-size: 1.7rem; font-weight: 900; color: #a00;">मण्डपाच्छादन / मातृकापूजन</p>
+                    <p style="font-weight:bold; font-size: 1.2rem;">12 मार्च 2026, गुरुवार</p>
                 </div>
-                <div style="margin-top:30px;">
-                    <p style="font-size: 1.6rem; font-weight: 900; color: var(--maroon);">मेंहंदी / संगीत</p>
-                    <p style="font-weight:bold;">13 मार्च 2026, शुक्रवार</p>
+                <div style="margin-top:35px;">
+                    <p style="font-size: 1.7rem; font-weight: 900; color: #a00;">मेंहंदी / संगीत</p>
+                    <p style="font-weight:bold; font-size: 1.2rem;">13 मार्च 2026, शुक्रवार</p>
                 </div>
             </div>
 
-            <div class="highlight-box">
-                <div style="font-size: 1.9rem; font-weight: 900; color: var(--gold); text-decoration: underline;">बारात, पाणिग्रहण एवं प्रीतिभोज</div>
-                <p style="font-size: 1.5rem; font-weight: bold; margin: 10px 0;">14 मार्च 2026, शनिवार</p>
+            <div class="highlight-event-box">
+                <div class="highlight-title">बारात आगमन एवं प्रीतिभोज</div>
+                <p style="font-size: 1.6rem; font-weight: bold; margin: 15px 0;">14 मार्च 2026, शनिवार</p>
                 <p style="font-size: 1.1rem; opacity: 0.9;">स्थान: निज निवास, मैत्रीनगर, महाराजपुर, जबलपुर</p>
-                <p style="font-size: 0.9rem; margin-top:10px; font-weight:bold;">(सायं 7:00 बजे से आपके आगमन तक)</p>
-                <a href="https://maps.google.com/?q=Maharajpur+Jabalpur" target="_blank" style="color:var(--gold); font-weight:900; text-decoration:none; border-bottom:2px solid var(--gold); display:inline-block; margin-top:15px;">📍 वेन्यू मैप देखें</a>
+                <p style="font-size: 1rem; margin-top:12px; font-weight:bold; border-top: 1px solid var(--gold); padding-top: 10px;">
+                    (सायं 7:00 बजे से आपके आगमन तक)
+                </p>
+                <a href="https://maps.google.com/?q=Maharajpur+Jabalpur" target="_blank" style="background: var(--gold); color: var(--maroon); padding: 10px 30px; border-radius: 30px; text-decoration: none; font-weight: 900; display: inline-block; margin-top: 20px;">📍 वेन्यू मैप देखें</a>
             </div>
 
-            <div class="arch-frame" style="background: #fff9f0;">
-                <p style="font-size: 1.2rem; color: #444; font-weight: 900;">विवाहस्थल: बड़ी खेरमाई परिसर, महाराजपुर, जबलपुर</p>
+            <div class="jharokha-frame" style="background: #fff9f0;">
+                <p style="font-size: 1.3rem; color: #444; font-weight: 900;">विवाहस्थल: बड़ी खेरमाई परिसर, महाराजपुर, जबलपुर</p>
             </div>
 
-            <h4 style="color: var(--maroon); text-align: left; font-weight: 900; padding-left: 5px;">आत्मीय स्वजन (नीचे स्क्रॉल करें ↓)</h4>
-            <div class="manual-scroll">
+            <h4 style="color: var(--maroon); text-align: left; font-weight: 900; padding-left: 10px;">आत्मीय स्वजन (नीचे स्क्रॉल करें ↓)</h4>
+            <div class="manual-scroll-area">
                 <strong>विनीत:</strong>
                 स्व. श्री भैयाराम - खिमिया बाई सेन (दादा-दादी) <br>
                 स्व. श्री जितेन्द्र - ममता सेन (पापा-मम्मी)
@@ -165,25 +165,25 @@
                 नमो, नमामि, प्रगति, अनिरूद्ध
             </div>
 
-            <a href="#" class="whatsapp-btn" style="background: var(--maroon); width: 100%; margin-bottom: 40px; border-radius: 50px; color: white;" onclick="alert('मुख्य तिथि: 14 मार्च 2026')">📅 SAVE THE DATE</a>
+            <a href="#" class="whatsapp-biz-btn" style="background: var(--maroon); width: 100%; margin-bottom: 40px; color: white;" onclick="alert('मुख्य तिथि: 14 मार्च 2026')">📅 SAVE THE DATE</a>
 
-            <div class="dev-footer">
+            <div class="biz-footer">
                 <p style="font-size: 1.1rem; color: #444; font-weight: bold; margin-bottom: 25px;">
-                    अगर आप भी अपने कस्टमर के लिए ऐसा 'बबल रेन' डिजिटल कार्ड बनवाना चाहते हैं?
+                    क्या आप भी अपने कस्टमर के लिए ऐसा 'शाही' डिजिटल कार्ड बनवाना चाहते हैं?
                 </p>
-                <a href="https://wa.me/919302756802?text=नमस्ते सुजीत जी, मुझे भी रोहित-महिमा जैसा शाही कार्ड बनवाना है।" class="whatsapp-btn">
+                <a href="https://wa.me/919302756802?text=नमस्ते सुजीत जी, मुझे भी रोहित-महिमा जैसा 'Bubble Rain' वाला डिजिटल कार्ड बनवाना है।" class="whatsapp-biz-btn">
                     <span>📱 Crafted by Sujeet Yadav</span>
                 </a>
-                <p style="margin-top: 15px; font-weight: 900; color: var(--indigo); font-size: 1.3rem;">9302756802</p>
+                <p style="margin-top: 15px; font-weight: 900; color: var(--maroon); font-size: 1.4rem;">9302756802</p>
             </div>
         </div>
     </div>
 
     <script>
-        // सघन बबल वर्षा (Falling Down Effect)
+        // सघन बबल वर्षा - 130+ Bubbles (Top to Down Rain Effect)
         function startBubbleRain() {
             const container = document.getElementById('bubble-container');
-            for (let i = 0; i < 120; i++) {
+            for (let i = 0; i < 130; i++) {
                 let b = document.createElement('div');
                 b.className = 'bubble';
                 b.style.left = Math.random() * 100 + 'vw';
@@ -200,3 +200,4 @@
     </script>
 </body>
 </html>
+
